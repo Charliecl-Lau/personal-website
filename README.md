@@ -1,73 +1,36 @@
-# React + TypeScript + Vite
+# Personal Website
+### A project repository built using the BMad Method framework and Google Stitch AI.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+This application isn’t just a simple portfolio; it’s a living showcase of a modern, agent-driven development lifecycle. It demonstrates the power of bridging the gap between raw ideation and production-ready UI in record time by leveraging advanced AI frameworks.
 
-Currently, two official plugins are available:
+## The Planning Phase: The BMad Method
+To ensure a structured and robust foundation, this project was architected using the **BMad (Brainstorming, Modeling, Analysis, Design)** framework, utilizing specialized AI agents for each phase:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   **Brainstorming Agent**: Used to exhaustively explore the project scope, identify potential edge cases, and clearly define the "North Star" vision of the application.
+*   **UX Specialist Agent**: Translated abstract high-level ideas into a concrete UX Specification, defining detailed user flows, information hierarchy, and accessibility requirements.
+*   **Tech Writer Agent**: Standardized the technical documentation and ensured the project architecture was clearly articulated, creating a seamless handover for implementation.
 
-## React Compiler
+## The Design Phase: Google Stitch
+Transitioning from "Agentic Planning" to "Visual Reality" was accelerated using **Google Stitch**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **Concept**: Once the UX Specification was finalized by the BMad agents, Google Stitch was used to instantly convert those rigorous requirements into high-fidelity UI designs.
+*   **Efficiency**: Stitch provided the initial scaffolding, allowing the development process to completely skip the "blank canvas" phase. This enabled a focus on refining interactions and logic rather than writing boilerplate layout code.
 
-## Expanding the ESLint configuration
+## Technical Stack
+*   **Frontend**: React (TypeScript) + Vite
+*   **Styling**: Vanilla CSS (Custom Design System)
+*   **Methodology**: BMad Framework
+*   **Design Acceleration**: Google Stitch AI
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## License & Usage
+**© 2025 Charlie Lau. All Rights Reserved.**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This project is a personal portfolio and is **strictly closed source**. The code is currently public for demonstration and code-review purposes only.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+**Restrictions:**
+*   You may **NOT** clone, download, or run this codebase locally without explicit permission.
+*   You may **NOT** reuse, copy, modify, or distribute any part of this code.
+*   You may **NOT** use this project, its design, or its architecture as a template.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+If you are a recruiter or peer wanting to review the code structure or discuss the implementation, please view the files directly on GitHub or contact me.
