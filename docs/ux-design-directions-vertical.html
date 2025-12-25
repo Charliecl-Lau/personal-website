@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UX Design Direction - Vertical Scroll Narrative</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #FFFFFF 0%, #FFFEF5 100%);
+      min-height: 100vh;
+      padding: 3rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      color: #666;
+      margin-bottom: 3rem;
+    }
+
+    .direction-badge {
+      display: inline-block;
+      background: #007AFF;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+    }
+
+    .structure-overview {
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .structure-overview h2 {
+      font-size: 1.5rem;
+      color: #1a1a1a;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .flow-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: linear-gradient(135deg, #FFFEF5 0%, #FFFFFF 100%);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 8px;
+    }
+
+    .flow-number {
+      width: 40px;
+      height: 40px;
+      background: #007AFF;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .flow-content h3 {
+      font-size: 1.125rem;
+      color: #1a1a1a;
+      margin-bottom: 0.25rem;
+    }
+
+    .flow-content p {
+      color: #666;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+    }
+
+    .mockup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .mockup-card {
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .mockup-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      border-color: #007AFF;
+    }
+
+    .mockup-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .mockup-label {
+      padding: 1.5rem;
+      background: white;
+    }
+
+    .mockup-label h3 {
+      font-size: 1.25rem;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+    }
+
+    .mockup-label p {
+      color: #666;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    .design-rationale {
+      background: linear-gradient(135deg, #FFFEF5 0%, #FFFFFF 100%);
+      border: 1px solid rgba(0, 122, 255, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    .design-rationale h2 {
+      color: #007AFF;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .design-rationale ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .design-rationale li {
+      padding: 0.75rem 0;
+      color: #444;
+      line-height: 1.6;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .design-rationale li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #007AFF;
+      font-weight: bold;
+    }
+
+    .comparison-note {
+      background: #FFF9E6;
+      border-left: 4px solid #FFCC00;
+      padding: 1rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .comparison-note strong {
+      color: #1a1a1a;
+    }
+
+    @media (max-width: 768px) {
+      .mockup-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="direction-badge">✨ Direction B: Vertical Narrative Scroll</div>
+    <h1>Vertical Scroll Design Direction</h1>
+    <p class="subtitle">Single-page storytelling layout with light & warm aesthetic</p>
+
+    <div class="comparison-note">
+      <strong>Design Evolution:</strong> Updated from Bento Grid (Direction A) to Vertical Narrative Scroll (Direction
+      B) for optimal mobile-first experience and linear storytelling flow.
+    </div>
+
+    <div class="structure-overview">
+      <h2>📜 Page Structure Flow</h2>
+      <p style="margin-bottom: 1.5rem; color: #666;">Single-page vertical scroll guiding recruiters through a curated
+        narrative journey:</p>
+
+      <div class="section-flow">
+        <div class="flow-item">
+          <div class="flow-number">1</div>
+          <div class="flow-content">
+            <h3>Hero / Introduction</h3>
+            <p>"Hi, I'm Charlie" - Large, immediate visual hook with brief tagline. Scroll indicator encourages
+              exploration.</p>
+          </div>
+        </div>
+
+        <div class="flow-item">
+          <div class="flow-number">2</div>
+          <div class="flow-content">
+            <h3>About Me</h3>
+            <p>Personal narrative establishing personality and human connection. Conversational tone, readable
+              typography.</p>
+          </div>
+        </div>
+
+        <div class="flow-item">
+          <div class="flow-number">3</div>
+          <div class="flow-content">
+            <h3>Coding Projects</h3>
+            <p>Section header followed by project cards in grid layout. Each card: thumbnail, title, tech stack badges,
+              description.</p>
+          </div>
+        </div>
+
+        <div class="flow-item">
+          <div class="flow-number">4</div>
+          <div class="flow-content">
+            <h3>CAD / Engineering Projects</h3>
+            <p>Featured section showcasing Bookshelf Speaker Design with high-quality CAD renders and engineering
+              details.</p>
+          </div>
+        </div>
+
+        <div class="flow-item">
+          <div class="flow-number">5</div>
+          <div class="flow-content">
+            <h3>Footer</h3>
+            <p>Social icons (GitHub, LinkedIn, Mail) centered. Neutral gray transitioning to electric azure blue on
+              hover. Clean and minimal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mockup-grid">
+      <div class="mockup-card">
+        <img
+          src="C:/Users/yeekw/.gemini/antigravity/brain/3601bf7e-9405-48be-8866-1b5d9513179d/vertical_scroll_desktop_1765576912688.png"
+          alt="Desktop Vertical Scroll Layout">
+        <div class="mockup-label">
+          <h3>Desktop: Full Vertical Layout</h3>
+          <p>Complete single-page scroll from Hero to Footer. Background gradient flows from white to warm yellow.
+            Multi-column project grids with generous whitespace.</p>
+        </div>
+      </div>
+
+      <div class="mockup-card">
+        <img
+          src="C:/Users/yeekw/.gemini/antigravity/brain/3601bf7e-9405-48be-8866-1b5d9513179d/vertical_scroll_mobile_1765576942068.png"
+          alt="Mobile Vertical Scroll">
+        <div class="mockup-label">
+          <h3>Mobile: Optimized Vertical Stack</h3>
+          <p>Same content structure, single column layout. Thumb-friendly spacing, 44px minimum tap targets. Perfect for
+            "The Mobile Recruiter" use case.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="design-rationale">
+      <h2>Why Vertical Scroll Narrative?</h2>
+      <ul>
+        <li><strong>Mobile-First Excellence:</strong> Vertical scrolling is the most natural mobile interaction—perfect
+          for recruiters viewing on phones</li>
+        <li><strong>Linear Story Flow:</strong> Guides user through deliberate journey: Introduction → About → Projects
+          → Contact</li>
+        <li><strong>Zero-Click Engagement:</strong> Everything visible on one page—no navigation hunting, no clicking
+          through multiple pages</li>
+        <li><strong>Apple-Style Premium:</strong> Mimics premium product page scrollytelling, elevating the candidate
+          presentation</li>
+        <li><strong>Progressive Disclosure:</strong> Hook with personality first, prove capability with projects, close
+          with contact—optimized for "30-Second Conversion"</li>
+        <li><strong>Focused Attention:</strong> One section at a time keeps user engaged without overwhelming choices
+        </li>
+        <li><strong>Content Integration:</strong> CAD renders and engineering details embedded naturally in the flow,
+          not hidden behind links</li>
+        <li><strong>Warm & Inviting:</strong> Light background gradient creates approachable, professional atmosphere
+        </li>
+        <li><strong>Clear Path to Action:</strong> Footer with GitHub, LinkedIn, Gmail always reachable via natural
+          scroll continuation</li>
+      </ul>
+    </div>
+
+    <div class="structure-overview" style="margin-top: 3rem;">
+      <h2>🎨 Technical Implementation</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li style="padding: 0.5rem 0; color: #444;">
+          <strong style="color: #007AFF;">Background:</strong> CSS gradient from #FFFFFF (top) to #FFFEF5 (bottom)
+        </li>
+        <li style="padding: 0.5rem 0; color: #444;">
+          <strong style="color: #007AFF;">Sections:</strong> Full-width with 80-120px vertical padding (desktop),
+          48-64px (mobile)
+        </li>
+        <li style="padding: 0.5rem 0; color: #444;">
+          <strong style="color: #007AFF;">Content Containers:</strong> Max-width 1200px for grids, 65ch for text blocks
+        </li>
+        <li style="padding: 0.5rem 0; color: #444;">
+          <strong style="color: #007AFF;">Project Cards:</strong> White/cream backgrounds, 16px border-radius, soft
+          shadows
+        </li>
+        <li style="padding: 0.5rem 0; color: #444;">
+          <strong style="color: #007AFF;">Interactive Elements:</strong> Electric azure #007AFF for all links, buttons,
+          badges
+        </li>
+        <li style="padding: 0.5rem 0; color: #444;">
+          <strong style="color: #007AFF;">Smooth Scrolling:</strong> CSS <code>scroll-behavior: smooth</code> for
+          polished experience
+        </li>
+        <li style="padding: 0.5rem 0; color: #444;">
+          <strong style="color: #007AFF;">Responsive:</strong> 2-3 column grids (desktop) → single column stack (mobile)
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

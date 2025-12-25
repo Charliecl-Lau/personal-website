@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Design Directions - Personal_Website</title>
+    <style>
+        :root {
+            --color-bg: #0f172a; /* Slate 900 */
+            --color-surface: rgba(255, 255, 255, 0.05);
+            --color-primary: #007AFF; /* Electric Azure */
+            --color-text: #f8fafc;
+            --color-text-muted: #94a3b8;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            background-color: #020617;
+            color: var(--color-text);
+            font-family: var(--font-sans);
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 { margin-top: 0; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .directions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--color-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+        }
+
+        .card-header {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: rgba(0, 122, 255, 0.2);
+            color: var(--color-primary);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .mockup-window {
+            flex: 1;
+            background-color: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Direction 1: The Bento Grid */
+        .dir-1 .hero {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 100px 150px;
+            gap: 10px;
+        }
+        .dir-1 .box {
+            background: var(--color-surface);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .dir-1 .box-large { grid-column: span 2; background: linear-gradient(45deg, var(--color-surface), rgba(0,122,255,0.1)); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;}
+
+        /* Direction 2: The Narrative */
+        .dir-2 .hero {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .dir-2 h1 { font-size: 2.5rem; letter-spacing: -1px; line-height: 1.1; margin-bottom: 20px;}
+        .dir-2 .scroll-line {
+            width: 2px; height: 100px; background: linear-gradient(to bottom, var(--color-primary), transparent); margin: 0 auto;
+        }
+
+        /* Direction 3: The Minimalist (Code) */
+        .dir-3 .hero {
+            padding: 30px;
+            font-family: var(--font-mono);
+            color: var(--color-text-muted);
+        }
+        .dir-3 .highlight { color: var(--color-primary); }
+        .dir-3 .cursor { display: inline-block; width: 8px; height: 16px; background: var(--color-primary); animation: blink 1s infinite; }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .rationale {
+            padding: 20px;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            background: rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Design Direction Variations</h1>
+        <p>Exploring the "Single Tone Active" Theme</p>
+    </div>
+
+    <div class="directions-grid">
+        
+        <!-- Direction 1 -->
+        <div class="card dir-1">
+            <div class="card-header">
+                <span class="badge">Direction A</span>
+                <h2>The Bento Grid</h2>
+                <p>Structure, density, and immediate visual variety.</p>
+            </div>
+            <div class="mockup-window">
+                <div class="hero">
+                    <div class="box box-large">
+                        Hello, I'm Charlie.
+                    </div>
+                    <div class="box"></div>
+                    <div class="box" style="background: var(--color-primary);"></div>
+                </div>
+            </div>
+            <div class="rationale">
+                <strong>Why:</strong> Instantly shows "breadth" of skills. Best for scanning. Very trendy in engineering portfolios (Linear style).
+            </div>
+        </div>
+
+        <!-- Direction 2 -->
+        <div class="card dir-2">
+            <div class="card-header">
+                <span class="badge">Direction B</span>
+                <h2>The Narrative</h2>
+                <p>Scrollytelling, typography-led, dramatic.</p>
+            </div>
+            <div class="mockup-window">
+                <div class="hero">
+                    <h1>Building<br><span style="color: var(--color-primary)">Complexity</span><br>Simpler.</h1>
+                    <div class="scroll-line"></div>
+                </div>
+            </div>
+            <div class="rationale">
+                <strong>Why:</strong> Maximizes the "Hook". Feels like a product launch. Sells the *person* before the skills.
+            </div>
+        </div>
+
+        <!-- Direction 3 -->
+        <div class="card dir-3">
+            <div class="card-header">
+                <span class="badge">Direction C</span>
+                <h2>The Terminal</h2>
+                <p>Minimalist, monospaced, code-centric.</p>
+            </div>
+            <div class="mockup-window">
+                <div class="hero">
+                    <span>> const engineer = {</span><br>
+                    <span>&nbsp;&nbsp;name: "<span class="highlight">Charlie</span>",</span><br>
+                    <span>&nbsp;&nbsp;passion: "Audio"</span><br>
+                    <span>};</span><br>
+                    <span class="cursor"></span>
+                </div>
+            </div>
+            <div class="rationale">
+                <strong>Why:</strong> Purest signal of "I write code." Very authoritative but potentially less "friendly" to non-technical recruiters.
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

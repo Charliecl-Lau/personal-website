@@ -1,0 +1,68 @@
+# Workflow Status Template
+
+# This tracks progress through BMM methodology Analysis, Planning, and Solutioning phases.
+# Implementation phase is tracked separately in sprint-status.yaml
+
+# STATUS DEFINITIONS:
+# ==================
+# Initial Status (before completion):
+#   - required: Must be completed to progress
+#   - optional: Can be completed but not required
+#   - recommended: Strongly suggested but not required
+#   - conditional: Required only if certain conditions met (e.g., if_has_ui)
+#
+# Completion Status:
+#   - {file-path}: File created/found (e.g., "docs/product-brief.md")
+#   - skipped: Optional/conditional workflow that was skipped
+
+generated: "2025-12-12T00:51:50-05:00"
+project: "Personal_Website"
+project_type: "greenfield"
+selected_track: "bmad-method"
+field_type: "greenfield"
+workflow_path: "c:/Users/yeekw/Desktop/Personal_Website/.bmad/bmm/workflows/workflow-status/paths/method-greenfield.yaml"
+workflow_status:
+  - id: "brainstorm-project"
+    phase: 0
+    status: "recommended"
+    agent: "analyst"
+  - id: "research"
+    phase: 0
+    status: "skipped"
+    agent: "analyst"
+  - id: "product-brief"
+    phase: 0
+    status: "docs/analysis/product-brief-Personal_Website-2025-12-12.md"
+    agent: "analyst"
+  - id: "prd"
+    phase: 1
+    status: "required"
+    agent: "pm"
+  - id: "create-ux-design"
+    phase: 1
+    status: "docs/ux-design-specification.md"
+    agent: "ux-designer"
+  - id: "create-architecture"
+    phase: 2
+    status: "required"
+    agent: "architect"
+  - id: "create-epics-and-stories"
+    phase: 2
+    status: "required"
+    agent: "pm"
+  - id: "test-design"
+    phase: 2
+    status: "recommended"
+    agent: "tea"
+  - id: "validate-architecture"
+    phase: 2
+    status: "optional"
+    agent: "architect"
+  - id: "implementation-readiness"
+    phase: 2
+    status: "required"
+    agent: "architect"
+  - id: "sprint-planning"
+    phase: 3
+    status: "required"
+    agent: "sm"

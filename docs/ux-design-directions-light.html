@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UX Design Direction - Light & Warm Theme</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #FFFFFF 0%, #FFFEF5 100%);
+      min-height: 100vh;
+      padding: 3rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      color: #666;
+      margin-bottom: 3rem;
+    }
+
+    .theme-info {
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .theme-info h2 {
+      font-size: 1.5rem;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+    }
+
+    .color-palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .color-swatch {
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .color-swatch.white {
+      background: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .color-swatch.cream {
+      background: #FFFEF5;
+    }
+
+    .color-swatch.cream-dark {
+      background: #FEFCF3;
+    }
+
+    .color-swatch.azure {
+      background: #007AFF;
+      color: white;
+    }
+
+    .color-label {
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .color-code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+
+    .mockup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .mockup-card {
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .mockup-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      border-color: #007AFF;
+    }
+
+    .mockup-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .mockup-label {
+      padding: 1.5rem;
+      background: white;
+    }
+
+    .mockup-label h3 {
+      font-size: 1.25rem;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+    }
+
+    .mockup-label p {
+      color: #666;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    .design-rationale {
+      background: linear-gradient(135deg, #FFFEF5 0%, #FFFFFF 100%);
+      border: 1px solid rgba(0, 122, 255, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    .design-rationale h2 {
+      color: #007AFF;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .design-rationale ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .design-rationale li {
+      padding: 0.75rem 0;
+      color: #444;
+      line-height: 1.6;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .design-rationale li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #007AFF;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .mockup-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Light & Warm Design Direction</h1>
+    <p class="subtitle">Updated color system for Personal_Website portfolio</p>
+
+    <div class="theme-info">
+      <h2>🎨 Color System Overview</h2>
+      <p>Transitioning from dark slate to a bright, inviting aesthetic with warm gradients from white to soft yellow.
+      </p>
+
+      <div class="color-palette">
+        <div class="color-swatch white">
+          <div class="color-label">Pure White</div>
+          <div class="color-code">#FFFFFF</div>
+        </div>
+        <div class="color-swatch cream">
+          <div class="color-label">Warm Cream</div>
+          <div class="color-code">#FFFEF5</div>
+        </div>
+        <div class="color-swatch cream-dark">
+          <div class="color-label">Pale Yellow</div>
+          <div class="color-code">#FEFCF3</div>
+        </div>
+        <div class="color-swatch azure">
+          <div class="color-label">Electric Azure</div>
+          <div class="color-code">#007AFF</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mockup-grid">
+      <div class="mockup-card">
+        <img
+          src="C:/Users/yeekw/.gemini/antigravity/brain/3601bf7e-9405-48be-8866-1b5d9513179d/light_bento_direction_1765576388624.png"
+          alt="Desktop Bento Grid Layout">
+        <div class="mockup-label">
+          <h3>Desktop: Bento Grid</h3>
+          <p>Asymmetric card layout with warm gradient background. Hero card, project cards, and skill ticker arranged
+            in a responsive grid. Clean shadows and subtle borders create depth.</p>
+        </div>
+      </div>
+
+      <div class="mockup-card">
+        <img
+          src="C:/Users/yeekw/.gemini/antigravity/brain/3601bf7e-9405-48be-8866-1b5d9513179d/light_mobile_direction_1765576418325.png"
+          alt="Mobile Portrait View">
+        <div class="mockup-label">
+          <h3>Mobile: Vertical Stack</h3>
+          <p>Mobile-first responsive design. Vertical stacking of cards optimized for thumb navigation. Warm background
+            gradient creates approachable, professional atmosphere.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="design-rationale">
+      <h2>Why Light & Warm?</h2>
+      <ul>
+        <li><strong>Approachability:</strong> Light backgrounds feel more welcoming and friendly to recruiters scanning
+          portfolios</li>
+        <li><strong>Content Showcase:</strong> CAD renders and technical drawings (often on white backgrounds) integrate
+          naturally</li>
+        <li><strong>Differentiation:</strong> Most developer portfolios use dark themes—this stands out</li>
+        <li><strong>Professional Trust:</strong> Clean, bright aesthetics signal attention to detail and polish</li>
+        <li><strong>Readability:</strong> Dark text on light backgrounds provides optimal reading comfort for
+          engineering reports</li>
+        <li><strong>Sunlight Effect:</strong> Gradient from white to warm yellow mimics natural lighting, creating
+          visual interest without distraction</li>
+        <li><strong>Azure Contrast:</strong> Electric blue accent creates striking visual contrast against warm
+          backgrounds</li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
