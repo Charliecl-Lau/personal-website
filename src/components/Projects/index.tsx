@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Code, Eye, Cpu, FileText, Smartphone, ArrowRight } from 'lucide-react';
+import { Code, Eye, ArrowRight } from 'lucide-react';
 import './Projects.css';
 import roverImage from '../../assets/HighPark.png';
 import websiteImage from '../../assets/personalwebsite.jpg';
