@@ -31,10 +31,10 @@ const projectsData: Project[] = [
     category: "Coding",
     image: websiteImage,
     description: "A modern, interactive portfolio website built with React and Vite, featuring a warm aesthetic and a narrative-driven project showcase.",
-    techStack: ["Html", "CSS", "TypeScript"],
+    techStack: ["Html", "CSS", "TypeScript", "Firebase"],
     techColor: "primary",
     links: [
-      { icon: Code, text: "Source", url: "#" },
+      { icon: Code, text: "Source", url: "https://github.com/Charliecl-Lau/personal-website"},
       { icon: Eye, text: "Report", url: "#" },
       //{ icon: FileText, text: "Reflection", url: "#" }
     ]
@@ -61,7 +61,7 @@ const projectsData: Project[] = [
     techStack: ["Node.js", "React", "GoLang", "PostgreSQL"],
     techColor: "primary",
     links: [
-      { icon: Code, text: "Source", url: "#" },
+      { icon: Code, text: "Source", url: "https://github.com/Charliecl-Lau/MicroBridge-v2" },
       { icon: Eye, text: "Report", url: "#" },
       //{ icon: FileText, text: "Reflection", url: "#" }
     ]
