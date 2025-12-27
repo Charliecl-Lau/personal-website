@@ -1,0 +1,145 @@
+/* MicroBridge Blog Styles */
+.report-page {
+  background-color: #f8fafc;
+  /* Slate-50 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #334155;
+  /* Slate-700 */
+}
+
+/* Header */
+.report-hero {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 4rem 1rem 3rem;
+  text-align: center;
+}
+
+.report-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.report-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  /* Slate-900 */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.report-subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  /* Slate-500 */
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.report-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0.875rem;
+  color: #94a3b8;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Layout */
+.report-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  flex: 1;
+  /* Take up available space for vertical centering */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Vertical Center */
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .report-container {
+    padding: 3rem 2rem;
+  }
+}
+
+/* Main Content */
+.report-content {
+  background-color: white;
+  padding: 2rem;
+  /* Reduced padding on mobile */
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-size: 1.0625rem;
+  /* 17px */
+  line-height: 1.75;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .report-content {
+    padding: 4rem;
+  }
+}
+
+.report-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.report-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.report-back-link:hover {
+  color: #007bff;
+}
+
+/* Typography elements */
+.report-content p {
+  margin-bottom: 1.5rem;
+}
+
+.report-content ul,
+.report-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.report-content li {
+  margin-bottom: 0.75rem;
+}
+
+.report-content strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.report-alert {
+  background-color: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.25rem 0.25rem 0;
+  color: #1e3a8a;
+  font-size: 0.95rem;
+}

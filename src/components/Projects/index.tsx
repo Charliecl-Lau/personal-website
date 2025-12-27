@@ -1,79 +1,22 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Code, Eye, ArrowRight } from 'lucide-react';
+import { Code, ArrowRight } from 'lucide-react';
 import './Projects.css';
-import roverImage from '../../assets/HighPark.png';
-import websiteImage from '../../assets/personalwebsite.jpg';
+import { projectsData } from '../../data/projectsList';
+import type { Category } from '../../data/projectsList';
 
-type Category = 'All' | 'Coding' | 'Engineering';
-
-interface ProjectLink {
-  icon: typeof Code; // Using one icon type as representative for the type definition
-  text: string;
-  url: string;
+interface ProjectsProps {
+  limit?: number;
 }
 
-interface Project {
-  id: number;
-  title: string;
-  category: 'Coding' | 'Engineering';
-  image: string;
-  description: string;
-  techStack: string[];
-  techColor: 'primary' | 'amber';
-  links: ProjectLink[];
-}
-
-const projectsData: Project[] = [
-  {
-    id: 1,
-    title: "Personal Website",
-    category: "Coding",
-    image: websiteImage,
-    description: "A modern, interactive portfolio website built with React and Vite, featuring a warm aesthetic and a narrative-driven project showcase.",
-    techStack: ["Html", "CSS", "TypeScript", "Firebase"],
-    techColor: "primary",
-    links: [
-      { icon: Code, text: "Source", url: "https://github.com/Charliecl-Lau/personal-website"},
-      { icon: Eye, text: "Report", url: "#" },
-      //{ icon: FileText, text: "Reflection", url: "#" }
-    ]
-  },
-  {
-    id: 2,
-    title: "Equitable Access to High Park",
-    category: "Engineering",
-    image: roverImage,
-    description: "Designed an accessible pathway to High Park Nature Centre, featuring a solar-heated conveyor belt for year-round access and ecosystem preservation.",
-    techStack: ["Engineering Design", "Sustainability", "Data Analysis"],
-    techColor: "amber",
-    links: [
-      { icon: Eye, text: "Report", url: "#" },
-      //{ icon: FileText, text: "Reflection", url: "#" }
-    ]
-  },
-  {
-    id: 3,
-    title: "MircoBridge StartUp",
-    category: "Coding",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDEXo7_DucxdUMY7Zxt21NDfspd7ilXml3DQoYAqAJbvKG1If3kvUfjrWTYLKWTfqPJfUmyu1jfzsNeGgUrYkdeEmDS5EWgYhfpRB__hEJ7T4P9pe2sMuZwQH-XAeTOzaaWV5HPUQIDjJeKDkNtu23lDrIzVByAtmnjOQ6zfIoGrmoiVFGTaVpwzwK4vvFUtQB9_hiD4OUEGPC-Q85jq0rOtQXGdRh4n6uTzPL-eJIf18fe2xz_WSyXCtquPVoX0wvT9ZafPztem4o",
-    description: "A full-stack mircointernship platform connecting students with Startup companies for internships.",
-    techStack: ["Node.js", "React", "GoLang", "PostgreSQL"],
-    techColor: "primary",
-    links: [
-      { icon: Code, text: "Source", url: "https://github.com/Charliecl-Lau/MicroBridge-v2" },
-      { icon: Eye, text: "Report", url: "#" },
-      //{ icon: FileText, text: "Reflection", url: "#" }
-    ]
-  }
-
-];
-
-const Projects = () => {
+const Projects = ({ limit }: ProjectsProps) => {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState<Category>('All');
 
-  const filteredProjects = projectsData.filter(project =>
+  // Determine which projects to consider based on limit
+  const baseProjects = limit ? projectsData.slice(0, limit) : projectsData;
+
+  const filteredProjects = baseProjects.filter(project =>
     activeFilter === 'All' ? true : project.category === activeFilter
   );
 
@@ -83,7 +26,9 @@ const Projects = () => {
         {/* Header */}
         <header className="projects-header">
           <div>
-            <h1 className="projects-title">Recent Projects</h1>
+            <h1 className="projects-title">
+              {limit ? 'Recent Projects' : 'All Projects'}
+            </h1>
             <div className="title-underline"></div>
           </div>
           <nav aria-label="Project Filter" className="filter-nav">
@@ -187,9 +132,13 @@ const Projects = () => {
                           }}
                           onClick={(e) => {
                             e.stopPropagation();
-                            if (link.text === "Report" || link.text === "Reflection") {
-                              const slug = project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-                              navigate(`/projects/${slug}`);
+                            if (link.text === "Report" || link.text === "Reflection" || link.text === "Blog") {
+                              if (link.url !== "#") {
+                                navigate(link.url);
+                              } else {
+                                const slug = project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                                navigate(`/projects/${slug}`);
+                              }
                             } else {
                               const docId = `${project.title}-${link.text}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
                               navigate(`/view-pdf?title=${encodeURIComponent(link.text)}&doc=${docId}`);
@@ -209,18 +158,20 @@ const Projects = () => {
         </div>
 
         {/* View All Button */}
-        <div className="view-all-container">
-          <button
-            className="filter-btn inactive"
-            onClick={() => {
-              setActiveFilter('All');
-              document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            <span>View All Projects</span>
-            <ArrowRight size={18} />
-          </button>
-        </div>
+        {limit && (
+          <div className="view-all-container">
+            <button
+              className="filter-btn inactive"
+              onClick={() => {
+                window.scrollTo(0, 0); // Ensure top scroll on navigation
+                navigate('/all-projects');
+              }}
+            >
+              <span>View All Projects</span>
+              <ArrowRight size={18} />
+            </button>
+          </div>
+        )}
       </main>
     </div>
   );

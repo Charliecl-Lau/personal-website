@@ -26,7 +26,7 @@ const Landing = () => {
 
         <div className="social-links">
           <a
-            href="https://github.com/Charlie060924"
+            href="https://github.com/Charliecl-Lau"
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon"

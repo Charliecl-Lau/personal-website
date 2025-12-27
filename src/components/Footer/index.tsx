@@ -11,7 +11,7 @@ const Footer = () => {
 
         <div className="social-links-row">
           {/* GitHub */}
-          <a href="https://github.com/Charlie060924" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="GitHub">
+          <a href="https://github.com/Charliecl-Lau" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="GitHub">
             <span className="tooltip-text">Check my code</span>
             <Github size={28} strokeWidth={1.5} />
           </a>

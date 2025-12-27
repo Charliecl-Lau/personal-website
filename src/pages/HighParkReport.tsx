@@ -25,7 +25,7 @@ const HighParkReport: React.FC = () => {
           </p>
           <div className="report-meta">
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Calendar size={16} /> 2025
+              <Calendar size={16} /> Nov. 23, 2025
             </span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <Clock size={16} /> 15 min read

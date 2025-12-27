@@ -11,7 +11,7 @@ const LandingPage: React.FC = () => {
       <Navigation />
       <Landing />
       <Narrative />
-      <Projects />
+      <Projects limit={3} />
       <Footer />
     </div>
   );
