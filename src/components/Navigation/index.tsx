@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Menu, X, Home, User, Code, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Menu, X, Home, User, Code, Mail, BookOpen } from 'lucide-react';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -40,6 +41,10 @@ const Navigation = () => {
             <Mail className="nav-icon" size={32} strokeWidth={2} />
             <span>Contact</span>
           </a>
+          <Link to="/blog" className="nav-link-item" onClick={closeMenu}>
+            <BookOpen className="nav-icon" size={32} strokeWidth={2} />
+            <span>Blog</span>
+          </Link>
         </nav>
       </div>
     </div>

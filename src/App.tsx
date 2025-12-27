@@ -6,6 +6,8 @@ import HighParkReport from './pages/HighParkReport';
 import MicroBridgeBlog from './pages/MicroBridgeBlog';
 import AllProjectsPage from './pages/AllProjectsPage'; // Add import
 
+import BlogPage from './pages/BlogPage';
+
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -14,11 +16,12 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/all-projects" element={<AllProjectsPage />} /> {/* Add route */}
+        <Route path="/all-projects" element={<AllProjectsPage />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/view-pdf" element={<PdfViewerPage />} />
         <Route path="/projects/equitable-access-to-high-park" element={<HighParkReport />} />
         <Route path="/projects/microbridge-startup" element={<MicroBridgeBlog />} />
+        <Route path="/blog" element={<BlogPage />} />
       </Routes>
     </Router>
   );

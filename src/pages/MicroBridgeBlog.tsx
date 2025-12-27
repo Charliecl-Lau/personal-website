@@ -9,9 +9,9 @@ const MicroBridgeBlog: React.FC = () => {
     <div className="report-page">
       {/* Back Navigation */}
       <nav style={{ padding: '1.5rem 2rem', backgroundColor: 'white' }}>
-        <Link to="/" className="report-back-link">
+        <Link to="/blog" className="report-back-link">
           <ArrowLeft size={20} />
-          Back to Projects
+          Back to Blog
         </Link>
       </nav>
 

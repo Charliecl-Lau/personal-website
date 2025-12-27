@@ -1,4 +1,4 @@
-import { Code, Eye, FileText } from 'lucide-react';
+import { Code, Eye } from 'lucide-react';
 import roverImage from '../assets/HighPark.png';
 import websiteImage from '../assets/personalwebsite.jpg';
 import microbridgeImage from '../assets/MicroBridge_Thumbnail.png';
@@ -60,8 +60,7 @@ export const projectsData: Project[] = [
     techStack: ["Node.js", "React", "GoLang", "PostgreSQL"],
     techColor: "primary",
     links: [
-      { icon: Code, text: "Source", url: "https://github.com/Charliecl-Lau/MicroBridge-v2" },
-      { icon: FileText, text: "Blog", url: "/projects/microbridge-startup" }
+      { icon: Code, text: "Source", url: "https://github.com/Charliecl-Lau/MicroBridge-v2" }
     ]
   },
   {
